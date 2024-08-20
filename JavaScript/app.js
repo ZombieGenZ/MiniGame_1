@@ -369,7 +369,6 @@ function CheckAnswer(items, idx) {
           });
     }
     else {
-        clearInterval(countdownTimer);
         if (answer == question[idx][5].toLowerCase()) {
             switch (countOpened) {
                 case 3:
@@ -423,6 +422,7 @@ function CheckAnswer(items, idx) {
             analyst.WrongAnswer++;
 
               if (opportunity < 1) {
+                clearInterval(countdownTimer);
                 Swal.fire({
                     title: "Đáp án chưa chính xác",
                     text: "Bạn đã hết cơ hội để trả lời",
